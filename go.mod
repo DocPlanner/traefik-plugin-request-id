@@ -1,5 +1,5 @@
-module github.com/mdklapwijk/traefik-plugin-request-id
+module github.com/docplanner/requestid
 
-go 1.21
+go 1.22
 
 require github.com/google/uuid v1.3.1

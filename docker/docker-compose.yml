@@ -1,0 +1,16 @@
+name: requestid
+
+services:
+  traefik:
+    image: traefik:v3.6.9
+    ports:
+      - "8888:80"
+      - "9090:8080"
+    volumes:
+      - ./../:/plugins-local/src/github.com/docplanner/requestid:ro
+      - ./traefik-config/dynamic.yaml:/etc/traefik/dynamic.yaml:ro
+      - ./traefik-config/traefik.yaml:/etc/traefik/traefik.yaml:ro
+  whoami:
+    image: traefik/whoami
+    labels:
+      - "traefik.enable=true"
