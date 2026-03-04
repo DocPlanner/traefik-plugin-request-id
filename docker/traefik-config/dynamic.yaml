@@ -1,0 +1,22 @@
+http:
+  routers:
+    whoami:
+      rule: "PathPrefix(`/`)"
+      entryPoints:
+        - web
+      service: whoami
+      middlewares:
+        - requestid
+
+  services:
+    whoami:
+      loadBalancer:
+        servers:
+          - url: "http://whoami:80"
+
+  middlewares:
+    requestid:
+      plugin:
+        requestid:
+          headerName: "X-Request-ID"
+          enabled: true

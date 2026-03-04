@@ -1,0 +1,21 @@
+log:
+  level: INFO
+
+accessLog: {}
+
+experimental:
+  localPlugins:
+    requestid:
+      moduleName: github.com/docplanner/requestid
+
+api:
+  dashboard: true
+  insecure: true
+
+entryPoints:
+  web:
+    address: ":80"
+
+providers:
+  file:
+    filename: /etc/traefik/dynamic.yaml
