@@ -1,4 +1,4 @@
-displayName: X-Request-ID
+displayName: Request ID
 type: middleware
 import: github.com/docplanner/requestid
 summary: Injects X-Request-ID header with a UUIDv4 value into HTTP requests and responses.
